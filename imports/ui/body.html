@@ -1,0 +1,24 @@
+<body>
+    <div class="container">
+        <header>
+        <h1>Credit Cards</h1>
+        </header>
+        <form class="new-card">
+            <input type="text" name="issuer" placeholder="Card issuer" />
+            <input type="text" name="name" placeholder="Card name" />
+            <input type="text" name="network" placeholder="Card network" />
+            <input type="submit" value="Submit">
+        </form>
+
+
+        <ul>
+        {{#each cards}}
+          {{> card}}
+        {{/each}}
+        </ul>
+    </div>
+</body>
+
+<template name="card">
+    <li>{{card.issuer}} {{card.name}} {{card.network}} card</li>
+</template>
