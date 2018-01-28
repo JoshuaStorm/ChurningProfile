@@ -21,3 +21,7 @@ insecure@1.0.7                # Allow all DB writes from clients (for prototypin
 check
 aldeed:collection2-core@2.0.0
 autopublish
+accounts-base
+accounts-ui
+accounts-password
+kadira:blaze-layout
