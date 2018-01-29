@@ -22,3 +22,9 @@ check
 aldeed:collection2-core@2.0.0
 autopublish
 mizzao:bootstrap-3
+accounts-base
+accounts-ui
+accounts-password
+kadira:blaze-layout
+kadira:flow-router
+useraccounts:core
