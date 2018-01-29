@@ -1,13 +1,37 @@
-<head>
-  <title>ChurningProfile</title>
-</head>
+<template name="dashboard-page">
+    <head>
+      <title>Churning Profile</title>
+    </head>
 
-<body>
-  <h1>Welcome to Meteor!</h1>
+    <body>
+        <h1>Welcome to Meteor!</h1>
+        {{> hello}}
+        {{> info}}
+    </body>
 
-  {{> hello}}
-  {{> info}}
-</body>
+    <body>
+        <div class="container">
+            <header>
+            <h1>Credit Cards</h1>
+            </header>
+            <form class="new-card">
+                <input type="text" name="issuer" placeholder="Card issuer" />
+                <input type="text" name="name" placeholder="Card name" />
+                <input type="text" name="network" placeholder="Card network" />
+                <input type="submit" value="Submit">
+            </form>
+
+
+            <ul>
+            {{#each cards}}
+              {{> card}}
+            {{/each}}
+            </ul>
+        </div>
+
+        <button onclick="AccountsTemplates.logout()">Signout</button>
+    </body>
+</template>
 
 <template name="hello">
   <button>Click Me</button>
@@ -22,4 +46,8 @@
     <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
     <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
   </ul>
+</template>
+
+<template name="card">
+    <li>{{card.issuer}} {{card.name}} {{card.network}} card</li>
 </template>
