@@ -1,8 +1,8 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
-import CardsOffered from '../../collections/cards.js';
+import CardsOffered from '/collections/cards.js';
 
-import './body.html';
+import './dashboard-page.html';
 
 Template.body.helpers({
     cards() {
@@ -22,7 +22,7 @@ Template.body.events({
 
         // Insert a task into the collection
         Meteor.call('addCard', issuer, name, network, function(error, result) {
-            // Clear form
+            // TODO: Clear form
         });
     },
 });
