@@ -1,37 +1,48 @@
 <template name="dashboardPage">
-    <head>
-      <title>Churning Profile</title>
-    </head>
 
-    <body>
-        <h1>Welcome to Meteor!</h1>
-        {{> hello}}
-        {{> info}}
-    </body>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Churning Profile</a>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <button onclick="AccountsTemplates.logout()" type="button" class="btn btn-danger">Log Out</button>
+            </ul>
+        </div>
+    </div>
+    </nav>
 
-    <body>
-        <div class="container">
-            <header>
-            <h1>Credit Cards</h1>
-            </header>
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+        	{{#each cards}}
+        		{{> card}}
+        	{{/each}}
+
+        	<button type="button" class="btn btn-success">Add Card</button>
+        </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        	<h1 class="page-header">Credit Cards</h1>
             <form class="new-card">
                 <input type="text" name="issuer" placeholder="Card issuer" />
                 <input type="text" name="name" placeholder="Card name" />
                 <input type="text" name="network" placeholder="Card network" />
                 <input type="submit" value="Submit">
             </form>
-
-
-            <ul>
-                <li>Shit</li>
-            {{#each cards}}
-              {{> card}}
-            {{/each}}
-            </ul>
         </div>
-
-        <button onclick="AccountsTemplates.logout()">Signout</button>
-    </body>
+        </div>
+    </div>
+</body>
 </template>
 
 <template name="hello">
