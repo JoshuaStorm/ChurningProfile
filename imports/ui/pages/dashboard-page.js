@@ -4,14 +4,14 @@ import CardsOffered from '/collections/cards.js';
 
 import './dashboard-page.html';
 
-Template.body.helpers({
+Template.dashboardPage.helpers({
     cards() {
         console.log(CardsOffered);
         return CardsOffered.find();
     },
 });
 
-Template.body.events({
+Template.dashboardPage.events({
     'submit .new-card'(event) {
         event.preventDefault();
 

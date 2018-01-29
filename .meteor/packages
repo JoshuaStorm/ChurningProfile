@@ -25,3 +25,5 @@ accounts-base
 accounts-ui
 accounts-password
 kadira:blaze-layout
+kadira:flow-router
+useraccounts:core
