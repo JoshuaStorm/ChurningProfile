@@ -4,8 +4,6 @@ import CardsOffered from '/collections/cards.js';
 
 import './dashboard-page.html';
 
-console.log("yolo")
-
 Template.dashboardPage.helpers({
     cards() {
         console.log(CardsOffered);
