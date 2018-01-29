@@ -4,7 +4,7 @@ import { Session } from 'meteor/session'
 
 import './login-page.html';
 
-// Template.login-page.events({
+// Template.loginPage.events({
 // 	'click [name=google]'(e, tmpl) {
 // 		e.preventDefault();
 // 		var googleLoginOptions = {

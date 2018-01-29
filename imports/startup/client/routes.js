@@ -47,7 +47,7 @@ public.route('/', {
     action: function(params) {
         Tracker.autorun(function() {
             console.log("Rendering login page");
-            if (!Meteor.loggingIn()) BlazeLayout.render('app-body', { main: 'login-page' });
+            if (!Meteor.loggingIn()) BlazeLayout.render('appBody', { main: 'loginPage' });
         });
     }
 });
@@ -57,7 +57,7 @@ loggedIn.route('/dashboard', {
     triggersEnter: [checkLoggedIn],
     action: function() {
         console.log("Rendering dashboard");
-        BlazeLayout.render('app-body', { main: 'dashboard-page' });
+        BlazeLayout.render('appBody', { main: 'dashboardPage' });
     },
     subscriptions: function(params) {
         this.register('Users', Meteor.subscribe('Users'));
@@ -67,13 +67,13 @@ loggedIn.route('/dashboard', {
 public.route('/error', {
     name: 'App.error',
     action() {
-        BlazeLayout.render('app-body', { main: 'error-page' });
+        BlazeLayout.render('appBody', { main: 'errorPage' });
     },
 });
 
 // the App_notFound template is used for unknown routes and missing lists
 FlowRouter.notFound = {
     action() {
-        BlazeLayout.render('app-body', { main: 'error-page' });
+        BlazeLayout.render('appBody', { main: 'errorPage' });
     },
 };
