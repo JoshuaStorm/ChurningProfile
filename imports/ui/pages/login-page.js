@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
-import { Session } from 'meteor/session'
+import { Session } from 'meteor/session';
+import { AccountsTemplates } from 'meteor/useraccounts:core';
 
 import './login-page.html';
 

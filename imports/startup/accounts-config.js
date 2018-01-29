@@ -11,7 +11,6 @@ AccountsTemplates.configure({
     onLogoutHook: redirectLogout,
 });
 
-
 function redirectLogout() {
     console.log("On logout hook");
     FlowRouter.go('/');
