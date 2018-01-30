@@ -18,4 +18,8 @@ Meteor.methods({
             'card': card
         });
     },
+    deleteCard: function(cardId) {
+        // check(meetingId, String);
+        CardsOffered.remove(cardId);
+    }
 });

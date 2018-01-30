@@ -6,7 +6,6 @@ import './dashboard-page.html';
 
 Template.dashboardPage.helpers({
     cards() {
-        console.log(CardsOffered);
         return CardsOffered.find();
     },
 });
@@ -23,6 +22,12 @@ Template.dashboardPage.events({
         // Insert a task into the collection
         Meteor.call('addCard', issuer, name, network, function(error, result) {
             // TODO: Clear form
+        });
+    },
+    'click .glyphicon-remove'(event) {
+        event.preventDefault();
+        Meteor.call('deleteCard', this._id, function(error, result) {
+            if (error) console.log('deleteCard: ' + error);
         });
     },
 });

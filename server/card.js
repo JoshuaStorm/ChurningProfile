@@ -10,8 +10,8 @@ const ANNUAL_FEE_CHECK = Match.ObjectIncluding({ 'amount': Number, 'waivedFirstY
 const SIGNUP_BONUS_CHECK = Match.ObjectIncluding({ 'amount': Number, 'currency': String, 'minimumSpend': Number });
 
 function Card(issuer,
-              network,
               name,
+              network,
               annualFee = { 'amount': 0, 'waivedFirstYear': false },
               signupBonus = { 'amount': 0, 'currency': 'USD', 'minimumSpend': 0 }) {
 
